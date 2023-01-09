@@ -46,7 +46,7 @@ end
 def calculator(operation, num1, num2)
   message = case operation 
             when "+" then num1 + num2
-            when "-" then num1 - num2
+            when "-" then num1 + num2
             when "*" then num1 * num2
             when "/" then num1 / num2
             else 
@@ -54,3 +54,11 @@ def calculator(operation, num1, num2)
               return nil
             end
 end
+
+
+puts hows_the_weather(30)
+puts fizzbuzz(9)
+puts calculator("/", 5, 2)
+puts admin_login("admin","12345")
+puts admin_login("ADMIN","12345")
+puts admin_login("ADMIN","1")

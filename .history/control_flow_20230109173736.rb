@@ -16,12 +16,13 @@ end
 # Otherwise, return "It's perfect out there!"
 
 def hows_the_weather(temperature)
-  case 
+  case temperature
   when temperature < 40 then "It's brisk out there!"
-  when temperature > 40 && temperature < 65 then "It's a little chilly out there!"
-  when temperature > 85 then "It's too dang hot out there!"
-  else "It's perfect out there!"
+  when (temperature > 40 && temperature < 65) then "It's a little chilly out there!"
+            when temperature > 85 then "It's too dang hot out there!"
+            else "It's perfect out there!"
   end
+            binding.pry
 end
 
 # For multiples of three, return "Fizz" instead of the number. 
@@ -30,14 +31,13 @@ end
 # number itself.
 
 def fizzbuzz(num)
-
-  message = case 
-            when num % 3 == 0 && num%5 == 0 then "FizzBuzz"
-            when num % 3 == 0 then "Fizz"
-            when num % 5 == 0 then "Buzz"
+  message = case num
+            when num%3 == 0 && num%5 == 0 then "FizzBuzz"
+            when num%3 == 0 then "Fizz"
+            when num%5 == 0 then "Buzz"
             else num
             end
-end 
+end
 
 # an operation and two numbers. If the operation is one of the following: 
 # +, -, *, or /, return the value of calling the operation on the two numbers. 
@@ -46,7 +46,7 @@ end
 def calculator(operation, num1, num2)
   message = case operation 
             when "+" then num1 + num2
-            when "-" then num1 - num2
+            when "-" then num1 + num2
             when "*" then num1 * num2
             when "/" then num1 / num2
             else 
@@ -54,3 +54,6 @@ def calculator(operation, num1, num2)
               return nil
             end
 end
+
+
+hows_the_weather(30)
